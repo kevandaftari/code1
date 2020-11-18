@@ -1,0 +1,43 @@
+// Assuming that all the characters will be upper_case characters
+#include<bits/stdc++.h>
+using namespace std;
+int main(void)
+{
+  string s1,s2;
+  cin>>s1>>s2;
+  vector<int> c(26),temp(26);
+  for(int i=0;i<s2.size();i++)
+  {
+    c[s2[i]-'A']++;
+  }
+  int i=0,j=0,n=s1.size(),k=s2.size();
+  int ans=0;
+  temp[s1[0]-'A']++;
+  while(i<n)
+  {
+      if(i-j+1==k)
+      {
+          if(temp==c)
+          {ans++;
+          cout<<"substring"<<" '"<<s1.substr(j,k)<<"' present at index "<<j<<endl;
+          }
+          i++;
+          if(i!=n)
+          temp[s1[i]-'A']++;
+      }
+      else
+      {
+        if(i-j+1<k)
+        {
+          i++;
+          if(i!=n)
+          temp[s1[i]-'A']++;
+        }
+        else
+        {
+          temp[s1[j]-'A']--;
+          j++;
+        }
+      }
+  }
+}
