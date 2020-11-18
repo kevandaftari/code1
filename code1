@@ -2,7 +2,7 @@
 using namespace std;
 int main(void)
 {
-    int n=4;
+    int n=7;
     //pattern in increasing order from 1 to n
     for(int i=1;i<=n;i++)
     {
